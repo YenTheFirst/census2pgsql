@@ -396,7 +396,4 @@ CREATE TABLE "census" (gid serial PRIMARY KEY,
   "H0010002" integer,
   "H0010003" integer);
 SELECT AddGeometryColumn('','census','the_geom','4269','POINT',2);
-CREATE INDEX idx_the_geom ON census USING GIST (the_geom); 
-CREATE INDEX idx_sumlev ON census ("SUMLEV"); 
-CREATE UNIQUE INDEX idx_state_and_record ON census ("STUSAB","LOGRECNO");
 COMMIT;
