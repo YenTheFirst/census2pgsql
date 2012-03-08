@@ -1,0 +1,8 @@
+SET CLIENT_ENCODING TO UTF8;
+SET STANDARD_CONFORMING_STRINGS TO ON;
+BEGIN;
+
+CREATE INDEX idx_the_geom ON census USING GIST (the_geom); 
+CREATE INDEX idx_sumlev ON census ("SUMLEV"); 
+CREATE UNIQUE INDEX idx_state_and_record ON census ("STUSAB","LOGRECNO");
+COMMIT;
